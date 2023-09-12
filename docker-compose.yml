@@ -1,0 +1,27 @@
+name: python-watchlist-postgres
+services:
+  server:
+    image: swampupdemo2023.jfrog.io/swampup-docker/watchlist:latest
+    build:
+      dockerfile: ./docker/Dockerfile
+    networks:
+      - server-side
+    ports:
+      - 5000:5000
+  db:
+    image: swampupdemo2023.jfrog.io/swampup-docker/postgres:12-alpine
+    restart: always
+    environment:
+      - POSTGRES_PASSWORD=
+      - POSTGRES_USER=watchlist
+      - POSTGRES_DB=watchlist
+    networks:
+      - server-side
+    ports:
+      - 5432:5432
+    volumes:
+      - db-data:/var/lib/postgresql/data
+networks:
+  server-side: {}
+volumes:
+  db-data: {}

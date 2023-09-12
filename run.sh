@@ -1,0 +1,7 @@
+#!/bin/bash
+export MOVIE_API_KEY="362c6e875328dc27a16f8a6999e0fda1"
+export SECRET_KEY="eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIzNjJjNmU4NzUzMjhkYzI3YTE2ZjhhNjk5OWUwZmRhMSIsInN1YiI6IjY0ZmYzZmM4NmEyMjI3MDBjM2I1NzBkYiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.9Yt5eLUyNPZDe9Z6R3HLDBrmiT51_nWcFCV13Crn7A4"
+export MAIL_USERNAME="lidorlg@gmail.com"
+export MAIL_PASSWORD="Octagon2"
+
+python manage.py runserver
