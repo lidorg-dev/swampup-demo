@@ -22,7 +22,7 @@ jobs:
         env:
           IMAGE_NAME: swampupdemo2023.jfrog.io/swampup-docker/jfrog-docker-example-image:${{ github.run_number }}
         run: |
-          jf docker build -t $IMAGE_NAME .
+          jf docker build -t $IMAGE_NAME -f docker/Dockerfile .
           jf docker push $IMAGE_NAME
           
       - name: Publish Build info With JFrog CLI
