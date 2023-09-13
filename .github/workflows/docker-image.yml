@@ -28,10 +28,10 @@ jobs:
           PSQL_PASS: ${{ secrets.PSQL_PASS }}
           PSQL_USER: ${{ secrets.PSQL_USER }}
         run: |
-          sed -i 's/export MOVIE_API_KEY=/export MOVIE_API_KEY='$MOVIE_API_KEY'/g' run.sh
-          sed -i 's/export MOVIE_API_SECRET=/export MOVIE_API_SECRET='$MOVIE_API_SECRET'/g' run.sh
-          sed -i 's/export MAIL_USERNAME=/export MAIL_USERNAME='$MAIL_USERNAME'/g' run.sh
-          sed -i 's/export MAIL_PASSWORD=/export MAIL_PASSWORD='$MAIL_PASSWORD'/g' run.sh
+        #  sed -i 's/export MOVIE_API_KEY=/export MOVIE_API_KEY='$MOVIE_API_KEY'/g' run.sh
+        #  sed -i 's/export MOVIE_API_SECRET=/export MOVIE_API_SECRET='$MOVIE_API_SECRET'/g' run.sh
+        #  sed -i 's/export MAIL_USERNAME=/export MAIL_USERNAME='$MAIL_USERNAME'/g' run.sh
+        #  sed -i 's/export MAIL_PASSWORD=/export MAIL_PASSWORD='$MAIL_PASSWORD'/g' run.sh
           sed -i 's/image:/image: '$IMAGE_NAME'/' docker-compose.yml
           cat docker-compose.yaml
 
