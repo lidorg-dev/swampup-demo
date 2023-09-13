@@ -11,9 +11,8 @@ services:
   db:
     image: swampupdemo2023.jfrog.io/swampup-docker/postgres:12-alpine
     restart: always
-    environment:
-      - POSTGRES_USER=watchlist
-      - POSTGRES_DB=watchlist
+    env_file:
+      - 'db.env'
     networks:
       - server-side
     ports:
