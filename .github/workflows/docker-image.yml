@@ -27,12 +27,15 @@ jobs:
           MOVIE_API_SECRET: ${{ secrets.MOVIE_API_SECRET }}
           PSQL_PASS: ${{ secrets.PSQL_PASS }}
           PSQL_USER: ${{ secrets.PSQL_USER }}
+          SQL_DB_URI: "postgresql+psycopg2://$PSQL_USER:$PSQL_PASS@python-watchlist-postgres-db-1/watchlist"
         run: |
            sed -i "s/export MOVIE_API_KEY=/export MOVIE_API_KEY=$MOVIE_API_KEY/g" run.sh
            sed -i "s/export SECRET_KEY=/export SECRET_KEY=$MOVIE_API_SECRET/g" run.sh
            sed -i "s/export MAIL_USERNAME=/export MAIL_USERNAME=$MAIL_USERNAME/g" run.sh
            sed -i "s/export MAIL_PASSWORD=/export MAIL_PASSWORD=$MAIL_PASSWORD/g" run.sh
            sed -i "s/POSTGRES_PASSWORD=/POSTGRES_PASSWORD=$PSQL_PASS/g" .env
+           sed -i -e 's|SQLALCHEMY_DATABASE_URI = |SQLALCHEMY_DATABASE_URI = "'"$SQL_DB_URI"'"|g' config.py
+           cat config.py
            cat run.sh
            cat .env
 
