@@ -20,7 +20,7 @@ jobs:
 
       - name: Build Tag and push Docker Image
         env:
-          IMAGE_NAME: swampupdemo2023.jfrog.io/swampup-docker/jfrog-docker-example-image:${{ github.run_number }}
+          IMAGE_NAME: swampupdemo2023.jfrog.io/swampup-docker/watchlist:${{ github.run_number }}
         run: |
           jf docker build -t $IMAGE_NAME -f docker/Dockerfile .
           jf docker push $IMAGE_NAME
