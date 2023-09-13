@@ -28,7 +28,7 @@ jobs:
           PSQL_PASS: ${{ secrets.PSQL_PASS }}
           PSQL_USER: ${{ secrets.PSQL_USER }}
         run: |
-          sed -i 's/export MOVIE_API_KEY=/export MOVIE_API_KEY="$MOVIE_API_KEY"/g' run.sh
+          sed -i 's/export MOVIE_API_KEY=/export MOVIE_API_KEY=$MOVIE_API_KEY/g' run.sh
           cat run.sh
 
 
