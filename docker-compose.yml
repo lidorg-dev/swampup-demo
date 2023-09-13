@@ -1,7 +1,7 @@
 name: python-watchlist-postgres
 services:
   server:
-    image: swampupdemo2023.jfrog.io/swampup-docker/watchlist:latest
+    image: swampupdemo2023.jfrog.io/swampup-docker/watchlist:${{ github.run_number }}
     build:
       dockerfile: ./docker/Dockerfile
     networks:
