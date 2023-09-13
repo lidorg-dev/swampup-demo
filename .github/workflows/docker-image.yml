@@ -18,6 +18,7 @@ jobs:
         env:
           JF_URL: ${{ secrets.JF_URL }}
           JF_ACCESS_TOKEN: ${{ secrets.JF_ACCESS_TOKEN }}
+          
       - name: insert secrets inside config files
         env:
           IMAGE_NAME: swampupdemo2023.jfrog.io/swampup-docker/watchlist:${{ github.run_number }}
