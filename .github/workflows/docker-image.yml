@@ -33,7 +33,7 @@ jobs:
            sed -i "s/export SECRET_KEY=/export SECRET_KEY=$MOVIE_API_SECRET/g" run.sh
            sed -i "s/export MAIL_USERNAME=/export MAIL_USERNAME=$MAIL_USERNAME/g" run.sh
            sed -i "s/export MAIL_PASSWORD=/export MAIL_PASSWORD=$MAIL_PASSWORD/g" run.sh
-           sed -i "s/POSTGRES_PASSWORD=/POSTGRES_PASSWORD=$PSQL_PASS/g" .env
+           sed -i "s/POSTGRES_PASSWORD=/POSTGRES_PASSWORD=$PSQL_PASS/g" db.env
            sed -i -e 's|SQLALCHEMY_DATABASE_URI = |SQLALCHEMY_DATABASE_URI = "'"$SQL_DB_URI"'"|g' config.py
            cat config.py
            cat run.sh
