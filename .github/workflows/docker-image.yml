@@ -32,7 +32,9 @@ jobs:
            sed -i "s/export SECRET_KEY=/export SECRET_KEY=$MOVIE_API_SECRET/g" run.sh
            sed -i "s/export MAIL_USERNAME=/export MAIL_USERNAME=$MAIL_USERNAME/g" run.sh
            sed -i "s/export MAIL_PASSWORD=/export MAIL_PASSWORD=$MAIL_PASSWORD/g" run.sh
+           sed -i "s/POSTGRES_PASSWORD=/POSTGRES_PASSWORD=$PSQL_PASS/g" .env
            cat run.sh
+           cat .env
 
       - name: Build Tag and push Docker Image
         env:
