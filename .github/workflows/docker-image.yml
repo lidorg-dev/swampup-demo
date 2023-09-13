@@ -37,7 +37,7 @@ jobs:
            sed -i -e 's|SQLALCHEMY_DATABASE_URI = |SQLALCHEMY_DATABASE_URI = "'"$SQL_DB_URI"'"|g' config.py
            cat config.py
            cat run.sh
-           cat .env
+           cat db.env
 
       - name: Build Tag and push Docker Image
         env:
