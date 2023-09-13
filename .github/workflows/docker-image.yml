@@ -1,6 +1,7 @@
 name: Build and Tag Docker Image
 
 on:
+  workflow_dispatch:
   push:
     branches:
       - main
