@@ -33,7 +33,6 @@ jobs:
            sed -i "s/export MOVIE_API_SECRET=/export MOVIE_API_SECRET=$MOVIE_API_SECRET/g" run.sh
            sed -i "s/export MAIL_USERNAME=/export MAIL_USERNAME=$MAIL_USERNAME/g" run.sh
            sed -i "s/export MAIL_PASSWORD=/export MAIL_PASSWORD=$MAIL_PASSWORD/g" run.sh
-        # sed -i 's/image:/image: '$IMAGE_NAME'/' docker-compose.yml
            cat run.sh
 
       # - name: Build Tag and push Docker Image
